@@ -17,4 +17,4 @@ return (
 }
 
 
-// import Home, { Texto1} from './page';
+// import Home, { Texto1} from './page'; 
