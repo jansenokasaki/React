@@ -8,7 +8,7 @@ export default function Home() {
 const aula = 2;
 return (
     <div>
-      <h1>Hello Jansen</h1>
+      <h1>José, leia o livro do Igor</h1>
       <p>Essa é a nossa aula {aula}ª de React</p>
       <Texto1 />
       <Texto1 />
