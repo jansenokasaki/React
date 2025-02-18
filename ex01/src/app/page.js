@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function Texto1() {
+export function Texto1() {
   return <p>Um outro paragráfo de texto.</p>;
 }
 
@@ -15,3 +15,6 @@ return (
     </div>
   );
 }
+
+
+// import Home, { Texto1} from './page';
