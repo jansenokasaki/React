@@ -15,6 +15,9 @@ return (
     <div>
       <h1>Hello Jansen</h1>
       <p>Essa é a nossa aula {aula}ª de React</p>
+      <hr />
+      <button></button>
+      <hr />
       {hide && (
        <>
       <Texto1 />
