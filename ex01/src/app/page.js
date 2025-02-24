@@ -1,3 +1,7 @@
+"useClient";
+
+import { useState } from "react";
+
 Function Texto1() {
 
 export function Texto1() {
