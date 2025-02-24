@@ -16,7 +16,7 @@ return (
       <h1>Hello Jansen</h1>
       <p>Essa é a nossa aula {aula}ª de React</p>
       <hr />
-      <button>{ hide ? "Show" : "Hide" }</button>
+      <button onClick={}>{ hide ? "Show" : "Hide" }</button>
       <hr />
       {hide && (
        <>
