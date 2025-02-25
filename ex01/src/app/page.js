@@ -12,7 +12,7 @@ export default function Home() {
   const aula = 2;
   return (
     <div>
-    <h1>Hello Lua!</h1>
+    <h1>Hello Jansen!</h1>
       <p> {aula}ª aula  de React </p>
       <hr />
       <button onClick={() => setNumAleat(Math.floor(Math.random() * 100))
