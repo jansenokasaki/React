@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-function Texto1() {
 
 export function Texto1() {
   return <p>Um outro paragráfo de texto.</p>;
