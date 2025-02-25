@@ -1,30 +1,27 @@
 "use client";
-
+ 
 import { useState } from "react";
-
-
-export function Texto1() {
-  return <p>Um outro paragráfo de texto.</p>;
+ 
+function Texto1() {
+  return <p>Um parágrafo de texto</p>;
 }
-
+ 
 export default function Home() {
-const [hide, setHide] = useState(false);
-const aula = 2;
-return (
+  const [hide, setHide] = useState(false);
+  const aula = 2;
+  return (
     <div>
-      <h1>Hello Jansen</h1>
-      <p>Essa é a nossa aula {aula}ª de React</p>
+    <h1>Hello Lua!</h1>
+      <p> {aula}ª aula  de React </p>
       <hr />
-      <button onClick={() => setHide (!Hide)}>{ hide ? "Show" : "Hide" }</button>
+      <button onClick={() => setHide(!hide)}>{hide ? "Abrir" : "Fechar"}</button>
       <hr />
-      {hide && (
-       <>
-      <Texto1 />
-      <Texto1 />
-       </>
+      {!hide && (
+        <>
+          <Texto1 />
+          <Texto1 />
+        </>
       )}
     </div>
-    )
-  }
-
-// import Home, { Texto1} from './page'; 
+  )
+}
