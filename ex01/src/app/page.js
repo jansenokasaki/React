@@ -25,7 +25,7 @@ return (
        </>
       )}
     </div>
-    };
+    )
   }
 
 // import Home, { Texto1} from './page'; 
