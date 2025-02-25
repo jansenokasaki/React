@@ -1,4 +1,4 @@
-"useClient";
+"use client";
 
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ export function Texto1() {
 }
 
 export default function Home() {
-const [gide, setHide] = useState(false);
+const [hide, setHide] = useState(false);
 const aula = 2;
 return (
     <div>
