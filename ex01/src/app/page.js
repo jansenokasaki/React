@@ -1,36 +1,25 @@
 "use client";
  
-import { useState } from "react";
+import React, { useState } from "react";
+import Dado from "./dado";
  
-function Texto1() {
-  return <p>Um outro parágrafo de texto!</p>;
-}
+export default function App() {
+    const [numero, setNumero] = useState(1);
  
-function gerarNumAleat() {
-  return Math.floor(Math.random() * 100) + 1;
-}
+    const jogarDado = () => {
+        const novoNumero = Math.floor(Math.random() * 6) + 1;
+        setNumero(novoNumero);
+    };
  
-export default function Home() {
-  const [hide, setHide] = useState(false);
-  const [numAleat, setNumAleat] = useState(gerarNumAleat());
-  const aula = 2;
-  return (
-<div>
-<h1>Hello Jansen</h1>
-<p>Essa é a nossa {aula}ª aula de React!</p>
-<hr />
-<button onClick={() => setNumAleat(gerarNumAleat())}>
-        Aletatório: {numAleat}
-</button>
-<hr />
-<button onClick={() => setHide(!hide)}>{hide ? "Show" : "Hide"}</button>
-<hr />
-      {!hide && (
-<>
-<Texto1 />
-<Texto1 />
-</>
-      )}
-</div>
-  );
+    return (
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h1>Jogue o Dado</h1>
+            <Dado numero={numero} />
+            <button
+                onClick={jogarDado}
+                style={{ marginTop: "20px", padding: "10px 20px", fontSize: "16px" }}>
+                Jogar
+            </button>
+        </div>
+    );
 }
