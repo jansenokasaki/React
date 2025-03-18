@@ -29,15 +29,15 @@ export default function App() {
         if (rodada < 5) {
             setRodada(rodada + 1);
         } else {
-            let vencedorFinal = "";
-            if (pontuacaoJogador1 > pontuacaoJogador2) {
-                vencedorFinal = "Jogador 1";
-            } else if (pontuacaoJogador2 > pontuacaoJogador1) {
-                vencedorFinal = "Jogador 2";
-            } else {
-                vencedorFinal = "Empate";
-            }
-            setTimeout(() => setVencedor(vencedorFinal), 100);
+            setTimeout(() => {
+                if (pontuacaoJogador1 > pontuacaoJogador2) {
+                    setVencedor("Jogador 1 venceu o jogo!");
+                } else if (pontuacaoJogador2 > pontuacaoJogador1) {
+                    setVencedor("Jogador 2 venceu o jogo!");
+                } else {
+                    setVencedor("O jogo terminou em empate!");
+                }
+            }, 100);
         }
     };
 
@@ -69,7 +69,7 @@ export default function App() {
 
             {rodada > 5 && vencedor && (
                 <div style={{ marginTop: "20px" }}>
-                    <h2>Vencedor do Jogo: {vencedor}</h2>
+                    <h2>{vencedor}</h2>
                 </div>
             )}
 
@@ -81,3 +81,4 @@ export default function App() {
         </div>
     );
 }
+
