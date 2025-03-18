@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import Dado from "./Dado"; 
+import { useState } from "react";
+import Dado from "./Dado";
 
 export default function App() {
     const [numeroJogador1, setNumeroJogador1] = useState(1);
@@ -9,9 +9,10 @@ export default function App() {
     const [rodada, setRodada] = useState(1);
     const [pontuacaoJogador1, setPontuacaoJogador1] = useState(0);
     const [pontuacaoJogador2, setPontuacaoJogador2] = useState(0);
+    const [vencedor, setVencedor] = useState("");
 
     const jogarDado = () => {
-        if (rodada > 5) return;
+        if (rodada > 5) return; 
 
         const dado1 = Math.floor(Math.random() * 6) + 1;
         const dado2 = Math.floor(Math.random() * 6) + 1;
@@ -27,12 +28,23 @@ export default function App() {
 
         if (rodada < 5) {
             setRodada(rodada + 1);
+        } else {
+            let vencedorFinal = "";
+            if (pontuacaoJogador1 > pontuacaoJogador2) {
+                vencedorFinal = "Jogador 1";
+            } else if (pontuacaoJogador2 > pontuacaoJogador1) {
+                vencedorFinal = "Jogador 2";
+            } else {
+                vencedorFinal = "Empate";
+            }
+            setTimeout(() => setVencedor(vencedorFinal), 100);
         }
     };
 
     return (
         <div style={{ textAlign: "center", marginTop: "50px" }}>
             <h1>Jogo de Dados</h1>
+            
             <div>
                 <h2>Rodada {rodada} de 5</h2>
             </div>
@@ -54,6 +66,12 @@ export default function App() {
                 <p>Jogador 1: {pontuacaoJogador1}</p>
                 <p>Jogador 2: {pontuacaoJogador2}</p>
             </div>
+
+            {rodada > 5 && vencedor && (
+                <div style={{ marginTop: "20px" }}>
+                    <h2>Vencedor do Jogo: {vencedor}</h2>
+                </div>
+            )}
 
             <button
                 onClick={jogarDado}
