@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Dado from "./Dado";
 
 export default function App() {
@@ -10,6 +10,18 @@ export default function App() {
     const [pontuacaoJogador1, setPontuacaoJogador1] = useState(0);
     const [pontuacaoJogador2, setPontuacaoJogador2] = useState(0);
     const [vencedor, setVencedor] = useState("");
+
+    useEffect(() => {
+        if (rodada > 5) {
+            if (pontuacaoJogador1 > pontuacaoJogador2) {
+                setVencedor("Jogador 1 venceu o jogo!");
+            } else if (pontuacaoJogador2 > pontuacaoJogador1) {
+                setVencedor("Jogador 2 venceu o jogo!");
+            } else {
+                setVencedor("O jogo terminou em empate!");
+            }
+        }
+    }, [rodada]);
 
     const jogarDado = () => {
         if (rodada > 5) return; 
@@ -21,24 +33,12 @@ export default function App() {
         setNumeroJogador2(dado2);
 
         if (dado1 > dado2) {
-            setPontuacaoJogador1(pontuacaoJogador1 + 1);
+            setPontuacaoJogador1(prev => prev + 1);
         } else if (dado2 > dado1) {
-            setPontuacaoJogador2(pontuacaoJogador2 + 1);
+            setPontuacaoJogador2(prev => prev + 1);
         }
 
-        if (rodada < 5) {
-            setRodada(rodada + 1);
-        } else {
-            setTimeout(() => {
-                if (pontuacaoJogador1 > pontuacaoJogador2) {
-                    setVencedor("Jogador 1 venceu o jogo!");
-                } else if (pontuacaoJogador2 > pontuacaoJogador1) {
-                    setVencedor("Jogador 2 venceu o jogo!");
-                } else {
-                    setVencedor("O jogo terminou em empate!");
-                }
-            }, 100);
-        }
+        setRodada(prev => prev + 1);
     };
 
     return (
@@ -46,7 +46,7 @@ export default function App() {
             <h1>Jogo de Dados</h1>
             
             <div>
-                <h2>Rodada {rodada} de 5</h2>
+                <h2>Rodada {rodada <= 5 ? rodada : 5} de 5</h2>
             </div>
 
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -67,7 +67,7 @@ export default function App() {
                 <p>Jogador 2: {pontuacaoJogador2}</p>
             </div>
 
-            {rodada > 5 && vencedor && (
+            {rodada > 5 && (
                 <div style={{ marginTop: "20px" }}>
                     <h2>{vencedor}</h2>
                 </div>
@@ -75,10 +75,11 @@ export default function App() {
 
             <button
                 onClick={jogarDado}
-                style={{ marginTop: "20px", padding: "10px 20px", fontSize: "16px" }}>
+                style={{ marginTop: "20px", padding: "10px 20px", fontSize: "16px" }}
+                disabled={rodada > 5}
+            >
                 Jogar
             </button>
         </div>
     );
 }
-
