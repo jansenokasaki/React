@@ -3,7 +3,7 @@ export default function Home() {
     <main className="p-6 space-y-6">
       <h1 className="text-3xl font-bold">Conversor Inteligente</h1>
       <p>
-        Este aplicativo tem como objetivo ajudar você a converter diferentes tipos de unidades de forma simples e automática, sem precisar clicar em botões.
+        Este aplicativo tem como objetivo ajudar você a converter diferentes tipos de unidades de forma simples e automática.
       </p>
       <ul className="list-disc ml-6 space-y-1">
         <li>Conversão de moeda (Dólar ↔ Real)</li>
