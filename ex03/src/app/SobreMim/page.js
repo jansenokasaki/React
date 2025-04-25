@@ -11,7 +11,7 @@ export default function SobreMim() {
         <p>
           Criei este aplicativo com <strong>Next.js</strong> e <strong>Tailwind CSS</strong> como parte dos meus estudos. Ele tem como objetivo mostrar minhas habilidades obtidas a partir do que aprendi nas aulas de Front-End do professor Márcio.
         </p>
-        <a href="/" className="text-blue-600 underline">← Voltar para a Home</a>
+        <Link href="/" className="text-blue-600 underline">← Voltar para a Home</Link>
       </main>
     );
   }
