@@ -3,7 +3,7 @@ export default function SobreMim() {
       <main className="p-6 space-y-4">
         <h1 className="text-3xl font-bold">Sobre o Desenvolvedor</h1>
         <p>
-          Olá! Meu nome é [Jansen] e sou estudante do terceiro período de <strong>Sistemas para Internet</strong> na <strong>UNICAP</strong> (Universidade Católica de Pernambuco).
+          Olá! Meu nome é Jansen e sou estudante do terceiro período de <strong>Sistemas para Internet</strong> na <strong>UNICAP</strong> (Universidade Católica de Pernambuco).
         </p>
         <p>
           Atualmente estou participando de uma <strong>residência tecnológica no Porto Digital</strong>, onde venho aprendendo inúmeras coisas, principalmente sobre desenvolvimento de software na prática.
